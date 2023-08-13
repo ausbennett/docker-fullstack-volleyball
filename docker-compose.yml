@@ -2,18 +2,14 @@ version: "3.7"
 
 services:
   volleyball-fe:
-    image: volleyball-fe:latest
-    build:
-      context: ./frontend
+    image: astnbnntt/volleyball:fe-latest
     ports:
       - "80:80"
     networks:
       - volleyball-network
 
   volleyball-api:
-    image: volleyball-api:latest
-    build:
-      context: ./backend
+    image: astnbnntt/volleyball:api-latest
     ports:
       - "5001:5001"
     networks:
@@ -22,9 +18,7 @@ services:
       - volleyball-db
 
   volleyball-db:
-    image: volleyball-db:latest
-    build:
-      context: ./database
+    image: astnbnntt/volleyball:db-latest
     ports:
       - "3306:3306"
     networks:
